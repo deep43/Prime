@@ -1,0 +1,133 @@
+
+.form-control {
+  border: 1px solid #cccccc !important;
+}
+
+.form-control {
+  &:hover {
+    border: 1px solid #cccccc !important;
+  }
+  &:focus {
+    border: 1px solid #cccccc !important;
+  }
+}
+
+.black-bg {
+  color: white;
+  background-color: #231e1e;
+  padding: 15px 10px;
+  border-radius: 5px;
+}
+
+.disabled-bg {
+  color: white;
+  background-color: #cccccc;
+  padding: 15px 10px;
+  border-radius: 5px;
+}
+
+.card-row {
+  margin-bottom: 40px;
+
+  .accounts {
+    margin-bottom: 30px;
+  }
+}
+
+.move-right {
+  width: 100%;
+  text-align: right;
+  margin-top: 20px;
+}
+
+.tab-row {
+  margin-bottom: 40px;
+}
+
+.card-row-flex {
+  display: flex;
+  margin: 5px 0;
+
+  .start {
+    padding: 0;
+    align-self: start;
+  }
+
+  .end {
+    align-self: end;
+    border-radius: 5px;
+  }
+
+  .text {
+    padding: 0;
+    margin: auto;
+  }
+}
+
+.btn{
+  &.disabled{
+    pointer-events: none;
+  }
+}
+
+.details-heading {
+  padding-bottom: 20px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #c1c1c1;
+}
+
+.client-form{
+  background-color: #ecf0f5;
+  padding: 15px 0;
+  margin-bottom: 30px;
+  border: 1px solid #c1c1c1;
+  margin-left: 0;
+  margin-right: 0;
+
+  .search-col{
+    position: relative;
+
+    i{
+      position: absolute;
+      right: 15px;
+      top: 0;
+      font-size: 18px;
+      color: #c1c1c1;
+      border: 1px solid #c1c1c1;
+      padding: 7px;
+    }
+  }
+}
+.rows-per-page{
+  max-width: 12%;
+  display: inline-block;
+  font-size: 12px;
+  padding: 0 5px;
+}
+.page-change-row{
+  position: absolute;
+  bottom: 18px;
+  display: block;
+  width: 100%;
+  font-size: 12px;
+}
+
+.table-card{
+  position: relative;
+}
+
+.client-link-g{
+  color: blue !important;
+  font-size: 12px;
+}
+
+.client-link {
+  color: blue;
+  font-size: 12px;
+}
+
+.dark{
+  .client-link{
+    color: #ff5252 !important;
+  }
+}

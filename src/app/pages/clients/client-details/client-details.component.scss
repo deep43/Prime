@@ -1,0 +1,95 @@
+
+.form-control {
+  border: 1px solid #cccccc !important;
+}
+
+.form-control {
+  &:hover {
+    border: 1px solid #cccccc !important;
+  }
+  &:focus {
+    border: 1px solid #cccccc !important;
+  }
+}
+
+.black-bg {
+  color: white;
+  background-color: #231e1e;
+  padding: 15px 10px;
+  border-radius: 5px;
+}
+
+.disabled-bg {
+  color: white;
+  background-color: #cccccc;
+  padding: 15px 10px;
+  border-radius: 5px;
+}
+
+.card-row {
+  margin-bottom: 40px;
+
+  .accounts {
+    margin-bottom: 30px;
+  }
+}
+
+.move-right {
+  width: 100%;
+  text-align: right;
+  margin-top: 20px;
+}
+
+.tab-row {
+  margin-bottom: 40px;
+}
+
+.card-row-flex {
+  display: flex;
+  margin: 5px 0;
+
+  .start {
+    padding: 0;
+    align-self: start;
+  }
+
+  .end {
+    align-self: end;
+    border-radius: 5px;
+  }
+
+  .text {
+    padding: 0;
+    margin: auto;
+  }
+}
+
+.btn{
+  &.disabled{
+    pointer-events: none;
+  }
+}
+
+.details-heading {
+  padding-bottom: 20px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #c1c1c1;
+}
+
+.client-details{
+  .md-tabs .nav-item.open .nav-link, .md-tabs .nav-item.open .nav-link:focus,
+  .md-tabs .nav-item.open .nav-link:hover, .md-tabs .nav-link.active,
+  .md-tabs .nav-link.active:focus, .md-tabs .nav-link.active:hover{
+    color: #231e1e !important;
+  }
+
+  .md-tabs .nav-link.active{
+    border-bottom: 4px solid #231e1e !important;
+  }
+}
+
+.data-tabs{
+  .nav-tabs{
+    max-width: 55%;
+  }
+}

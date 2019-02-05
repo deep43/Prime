@@ -1,0 +1,215 @@
+// Button mixins start
+@mixin buttons($back-color,$border-color,$color:#fff,$cursor:pointer,$transition:all ease-in 0.3s) {
+  background-color: $back-color;
+  border-color: $border-color;
+  color: $color;
+  cursor: $cursor;
+  transition: $transition;
+}
+
+@mixin buttons-hover($back-color,$border-color,$color:#fff) {
+  background-color: $back-color;
+  border-color: $border-color;
+}
+
+@mixin animations-frame($name) {
+  @-webkit-keyframes #{$name}{
+    @content;
+  }
+  @keyframes #{$name}{
+    @content;
+  }
+}
+
+@mixin buttons-active($back-color,$border-color,$color:#fff,$box-shadow:none) {
+  background-color: $back-color;
+  border-color: $border-color;
+  box-shadow: $box-shadow;
+  color: $color;
+}
+
+@mixin labels-active($back-color,$border-color,$color:#fff,$box-shadow:none) {
+  background-color: $back-color;
+  border-color: $border-color;
+  box-shadow: $box-shadow;
+  color: $color;
+}
+
+@mixin button-trans($back-color,$border-color) {
+  background-color: $back-color;
+  border-color: $border-color;
+}
+
+@mixin buttons-focus($back-color,$color:#fff,$box-shadow:none) {
+  box-shadow: $box-shadow;
+  color: $color;
+  background-color: $back-color;
+}
+
+@mixin buttons-borders($color,$back-color:#fff) {
+  color: $color;
+  background-color: $back-color;
+}
+
+@mixin dropdown-hover($back-color,$color:#fff) {
+  background-color: $back-color;
+  color: $color;
+}
+
+// Button mixins end
+
+// Label mixin start
+@mixin labels-inverse($border-color,$color) {
+  border-color: $border-color;
+  color: $color;
+}
+
+@mixin labels-badge($back-color:#34495e,$color:#fff) {
+  background-color: $back-color;
+  color: $color;
+}
+
+@mixin labels-badge-inverse($color,$back-color:#fff) {
+  color: $color;
+  background-color: $back-color;
+}
+
+// Label mixin end
+
+@mixin width($width) {
+  width: $width;
+}
+
+@mixin shadow($shadow...) {
+  box-shadow: $shadow;
+
+}
+
+@mixin theme-keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+// define breakpoints
+// ==========================================================================
+$tablet-width: 768px;
+$desktop-width: 992px;
+$lgdesktop-width: 1200px;
+$ipad-pro: "(min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2)";
+$ipad-pro-portrait-breakpoint: "(min-device-width: 1024px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2)";
+$ipad-pro-landscape-breakpoint: "(min-device-width: 1366px) and (max-device-width: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) ";
+
+/*Mobile, tablet, desktop media queries Use by just saying @include and adding its styles inside*/
+
+@mixin not-mobile {
+  @media screen and (min-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin mobile-landscape {
+  @media screen and (max-width: #{$tablet-width - 1px} and (orientation: landscape)) {
+    @content;
+  }
+}
+
+@mixin iphone-landscape {
+  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin tablet-only {
+  @media screen and (min-width: #{$tablet-width}) and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin desktop-only {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin tablet-mobile {
+  @media screen and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop-tablet {
+  @media screen and (min-width: #{$tablet-width}) and (max-width: #{$lgdesktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: #{$desktop-width}) and (max-width: #{$lgdesktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop-lgdesktop {
+  @media screen and (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin lgdesktop {
+  @media screen and (min-width: #{$lgdesktop-width}) {
+    @content;
+  }
+}
+
+@mixin tablet-portrait {
+  @media screen and (min-width: #{$tablet-width}) and (max-width: 1024px) and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin tablet-landscape {
+  @media screen and (min-width: #{$tablet-width}) and (max-width: 1024px) and (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin ipad-pro {
+  @media only screen and #{$ipad-pro}{
+    @content;
+  }
+}
+@mixin iphonePlus {
+  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin ipad-pro-portrait {
+  @media only screen and #{$ipad-pro-portrait-breakpoint}{
+    @content;
+  }
+}
+
+@mixin ipad-pro-landscape {
+  @media only screen and #{$ipad-pro-landscape-breakpoint}{
+    @content;
+  }
+}
+
+/* To use media queries we just have to say @include tablet{font-size:14px} */

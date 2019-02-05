@@ -1,0 +1,25 @@
+.not-active {
+    pointer-events: none;
+    cursor: default;
+}
+.cop-date-icon{
+  background: #231e1e;
+  color: white;
+  border-radius: 0;
+  border-left: 0;
+}
+
+.top-selects{
+  &.cop-top-selects{
+    padding: 0;
+  }
+  .form-control{
+    &.cop-date-input{
+      width: 57% !important;    }
+  }
+
+  &.refresh-col{
+    text-align: right;
+    display: block;
+  }
+}

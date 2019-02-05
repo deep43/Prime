@@ -1,0 +1,1079 @@
+/**  =====================
+      Generic-class css start
+========================== **/
+$element-color: 'primary' $primary-color, 'warning' $warning-color, 'default' $default-color, 'danger' $danger-color, 'success' $success-color, 'inverse' $inverse-color, 'info' $info-color;
+
+.generic-card-block code {
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.generic-image-body {
+  li {
+    padding: 0 20px;
+    display: inline-block;
+  }
+
+  code {
+    display: block;
+  }
+
+  img {
+    display: block;
+    margin: 10px auto 20px;
+  }
+}
+
+/*====== Padding , Margin css starts ======*/
+$i: 0;
+@while $i<=50 {
+  .p {
+    &-#{$i} {
+      padding: #{$i}px;
+    }
+
+    &-t-#{$i} {
+      padding-top: #{$i}px;
+    }
+
+    &-b-#{$i} {
+      padding-bottom: #{$i}px;
+    }
+
+    &-l-#{$i} {
+      padding-left: #{$i}px;
+    }
+
+    &-r-#{$i} {
+      padding-right: #{$i}px;
+    }
+  }
+
+  .m {
+    &-#{$i} {
+      margin: #{$i}px;
+    }
+
+    &-t-#{$i} {
+      margin-top: #{$i}px;
+    }
+
+    &-b-#{$i} {
+      margin-bottom: #{$i}px;
+    }
+
+    &-l-#{$i} {
+      margin-left: #{$i}px;
+    }
+
+    &-r-#{$i} {
+      margin-right: #{$i}px;
+    }
+  }
+  $i: $i+5;
+}
+
+/*====== Padding , Margin css ends ======*/
+/*====== Display css starts ======*/
+.d {
+  &-none {
+    display: none;
+  }
+
+  &-inline-block {
+    display: inline-block;
+  }
+
+  &-inline-flex {
+    display: inline-flex;
+  }
+}
+
+/*====== display css ends ======*/
+/*====== Border-radius css starts ======*/
+$i: 0;
+@while $i<=10 {
+  .b-radius-#{$i} {
+    border-radius: #{$i}px;
+  }
+  $i: $i+5;
+}
+
+/*====== Border-radius css ends ======*/
+/*====== Font-size css starts ======*/
+$i: 10;
+@while $i<=80 {
+  .f-#{$i} {
+    font-size: #{$i}px;
+  }
+  $i: $i+2;
+}
+
+/*====== Font-size css ends ======*/
+/*====== Font-weight css starts ======*/
+$i: 100;
+@while $i<=900 {
+  .f-w-#{$i} {
+    font-weight: #{$i};
+  }
+  $i: $i+100;
+}
+
+/*====== Font-weight css ends ======*/
+/*====== Font-style css starts ======*/
+.f-s {
+  &-normal {
+    font-style: normal;
+  }
+
+  &-italic {
+    font-style: italic;
+  }
+
+  &-oblique {
+    font-style: oblique;
+  }
+
+  &-initial {
+    font-style: initial;
+  }
+
+  &-inherit {
+    font-style: inherit;
+  }
+}
+
+/*====== Font-style css ends ======*/
+
+.text {
+  /*====== Text-Transform css starts ======*/
+  &-capitalize {
+    text-transform: capitalize;
+  }
+
+  &-uppercase {
+    text-transform: uppercase;
+  }
+
+  &-lowercase {
+    text-transform: lowercase;
+  }
+  /*====== Text-Transform css ends ======*/
+  /*====== Text-Decoration css starts ======*/
+  &-overline {
+    text-decoration: overline;
+  }
+
+  &-line-through {
+    text-decoration: line-through;
+  }
+
+  &-underline {
+    text-decoration: underline;
+  }
+  /*====== Text-Decoration css ends ======*/
+}
+
+/*====== Vertical-Align css starts ======*/
+
+.baseline {
+  vertical-align: baseline;
+}
+
+.sub {
+  vertical-align: sub;
+}
+
+.super {
+  vertical-align: super;
+}
+
+.top {
+  vertical-align: top;
+}
+
+.text-top {
+  vertical-align: text-top;
+}
+
+.middle {
+  vertical-align: middle;
+}
+
+.bottom {
+  vertical-align: bottom;
+}
+
+.text-bottom {
+  vertical-align: text-bottom;
+}
+
+.initial {
+  vertical-align: initial;
+}
+
+.inherit {
+  vertical-align: inherit;
+}
+
+/*====== Vertical-Align css ends ======*/
+/*====== Position css starts ======*/
+.pos {
+  &-static {
+    position: static;
+  }
+
+  &-absolute {
+    position: absolute;
+  }
+
+  &-fixed {
+    position: fixed;
+  }
+
+  &-relative {
+    position: relative;
+  }
+
+  &-initial {
+    position: initial;
+  }
+
+  &-inherit {
+    position: inherit;
+  }
+}
+
+/*====== Position css ends ======*/
+/*====== Overflow css starts ======*/
+$i: hidden, visible, auto;
+@each $val in $i {
+  .o-#{$val} {
+    overflow: $val;
+  }
+}
+
+/*====== Overflow css ends ======*/
+/*====== Image-sizes css starts ======*/
+$i: 20;
+@while $i<=100 {
+  .img-#{$i} {
+    width: #{$i}px;
+  }
+  $i: $i+10;
+}
+
+/*====== Image-sizes css ends ======*/
+/*======= Text css starts ===========*/
+$custom-color: #64b0f2;
+$pink-color: #ff7aa3;
+$muted-color: #78909c;
+$dark-color: #2b3d51;
+$purple-color: #9261c6;
+$text-name: text-primary, text-warning, text-default, text-danger, text-success, text-inverse, text-info, text-custom, text-pink, text-dark, text-purple, text-muted;
+$text-color: $primary-color, $warning-color, $default-color, $danger-color, $success-color, $inverse-color, $info-color, $custom-color, $pink-color, $dark-color, $purple-color, $muted-color;
+@each $var in $text-name {
+  $i: index($text-name, $var);
+
+  .#{$var} {
+    color: nth($text-color, $i);
+  }
+}
+
+/*======= Text css ends ===========*/
+/*======= Label-color css starts  ======= */
+
+.label {
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  line-height: 1;
+  margin-bottom: 0;
+  text-transform: capitalize;
+}
+
+@each $value in $element-color {
+  .label-#{nth($value, 1)} {
+    background: nth($value, 2);
+  }
+}
+
+.label-warning {
+  color: #fff;
+}
+
+/*======= Label-color css starts  ======= */
+/*======= Badge-color css starts  ======= */
+@each $value in $element-color {
+  .badge-#{nth($value, 1)} {
+    background: nth($value, 2);
+  }
+}
+
+/*======= Badge-color css end  ======= */
+/*======= Background-color css starts  ======= */
+
+.bg-color-box {
+  text-align: center;
+  display: inline-block;
+  padding: 10px 20px;
+  box-shadow: 0 0 5px 0 rgba(128, 128, 128, 0.49);
+  font-weight: 600;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+
+  span {
+    color: #fff;
+  }
+}
+
+@each $value in $element-color {
+  .bg-#{nth($value, 1)} {
+    background-color: nth($value, 2);
+    color: #fff;
+  }
+}
+
+/*======= Background-color css end  ======= */
+/*======= Button-color css starts  ======= */
+@each $value in $element-color {
+  .color-#{nth($value, 1)} {
+    background-color: nth($value, 2);
+  }
+}
+
+/*======= Button-color css ends  ======= */
+/*======= Loader-color css starts  ======= */
+@each $value in $element-color {
+  .loader-#{nth($value, 1)} {
+    background-color: nth($value, 2);
+  }
+}
+
+/*======= Loader-color css ends  ======= */
+/*======= Nestable-color css starts  ======= */
+@each $value in $element-color {
+  .nestable-#{nth($value, 1)} {
+    background-color: nth($value, 2);
+    border-color: nth($value, 2);
+    color: #fff;
+  }
+}
+
+/*======= Nestable-color css ends  ======= */
+/*======= Table-Border-Bottom-color css starts  ======= */
+@each $value in $element-color {
+  table tbody .border-bottom-#{nth($value, 1)} td,
+  table tbody .border-bottom-#{nth($value, 1)} th,
+  table thead .border-bottom-#{nth($value, 1)} th {
+    border-bottom: 1px solid nth($value, 2);
+  }
+}
+
+/*======= Table-Border-Bottom-color css ends  ======= */
+/*======= Table styling css starts  ======= */
+@each $value in $element-color {
+  .table-styling .table-#{nth($value, 1)},
+  .table-styling.table-#{nth($value, 1)} {
+    background-color: nth($value, 2);
+    color: #fff;
+    border: 3px solid nth($value, 2);
+
+    thead {
+      background-color: darken(nth($value, 2), 10%);
+      border: 3px solid darken(nth($value, 2), 10%);
+    }
+  }
+}
+
+/*======= Table styling css ends  ======= */
+/*======= Toolbar css starts  ======= */
+$light: #bdc3c7;
+$dark: #34495e;
+$toolbar-name: primary, warning, light, danger, success, dark, info;
+$toolbar-color: $primary-color, $warning-color, $default-color, $danger-color, $success-color, $inverse-color, $info-color;
+@each $var in $toolbar-name {
+  $i: index($toolbar-name, $var);
+
+  .toolbar-#{$var} .tool-item {
+    background: nth($toolbar-color, $i);
+  }
+
+  .toolbar-#{$var} .tool-item.selected,
+  .toolbar-#{$var} .tool-item:hover {
+    background: darken(nth($toolbar-color, $i), 10%);
+  }
+
+  .toolbar-#{$var}.tool-top .arrow {
+    border-color: nth($toolbar-color, $i) transparent transparent;
+  }
+
+  .toolbar-#{$var}.tool-bottom .arrow {
+    border-color: transparent transparent nth($toolbar-color, $i);
+  }
+
+  .toolbar-#{$var}.tool-left .arrow {
+    border-color: transparent transparent transparent nth($toolbar-color, $i);
+  }
+
+  .toolbar-#{$var}.tool-right .arrow {
+    border-color: transparent nth($toolbar-color, $i) transparent transparent;
+  }
+
+  .btn-toolbar-#{$var}.pressed {
+    background-color: nth($toolbar-color, $i);
+  }
+}
+
+/*======= Toolbar css ends  ======= */
+/*======= Card-Border-Top-color css starts  ======= */
+@each $value in $element-color {
+  .card-border-#{nth($value, 1)} {
+    border-top: 4px solid nth($value, 2);
+  }
+}
+
+/*======= Card-Border-Top-color css ends  ======= */
+/*======= Card-color css starts  ======= */
+@each $value in $element-color {
+  .card-#{nth($value, 1)} {
+    background: nth($value, 2);
+  }
+}
+
+/*======= Card-color css ends  ======= */
+/*======= All-Borders-color css starts  ======= */
+@each $value in $element-color {
+  .b-t-#{nth($value, 1)} {
+    border-top: 1px solid #{nth($value, 2)};
+  }
+
+  .b-b-#{nth($value, 1)} {
+    border-bottom: 1px solid #{nth($value, 2)};
+  }
+
+  .b-l-#{nth($value, 1)} {
+    border-left: 1px solid #{nth($value, 2)};
+  }
+
+  .b-r-#{nth($value, 1)} {
+    border-right: 1px solid #{nth($value, 2)};
+  }
+
+  .b-#{nth($value, 1)} {
+    border: 1px solid #{nth($value, 2)};
+  }
+}
+
+/*======= All-Borders-color css ends  ======= */
+/*======= All-color css start  ======= */
+@each $value in $social-name {
+  $i: index($social-name, $value);
+
+  .bg-#{$value} {
+    background: nth($social-color, $i);
+  }
+
+  .text-#{$value} {
+    color: nth($social-color, $i);
+  }
+}
+
+@each $value in $color-name {
+  $i: index($color-name, $value);
+
+  .bg-#{$value} {
+    background: nth($color-color, $i),;
+  }
+
+  .text-#{$value} {
+    color: nth($color-color, $i);
+  }
+}
+
+/*======= All-color css ends  ======= */
+
+.menu-links {
+  padding: 0 !important;
+  a {
+    font-size: 15px !important;
+  }
+  &:hover {
+    text-decoration: underline;
+  }
+  @include tablet-landscape {
+    padding: 0 !important;
+  }
+
+  @include ipad-pro-portrait {
+    padding: 0 !important;
+  }
+
+  @include ipad-pro-landscape {
+    padding: 0 !important;
+  }
+}
+
+.breadcrumb-links {
+  @include tablet-landscape {
+    flex: 0 0 33.33333333% !important;
+    max-width: 33.33333333% !important;
+  }
+
+  @include tablet-portrait {
+    flex: 0 0 33.33333333% !important;
+    max-width: 33.33333333% !important;
+  }
+  @include ipad-pro {
+    flex: 0 0 33.33333333% !important;
+    max-width: 33.33333333% !important;
+  }
+}
+
+.menu-links-icon {
+  padding: 0 5px !important;
+  @include tablet-landscape {
+    padding: 0 !important;
+  }
+
+  @include ipad-pro-portrait {
+    padding: 0 !important;
+  }
+
+  @include ipad-pro-landscape {
+    padding: 0 !important;
+  }
+}
+
+.header-search {
+  line-height: 0.8;
+
+  .main-search {
+    padding: 9px 0;
+    display: block;
+
+    .input-group {
+      margin-bottom: 0;
+      background-color: transparent;
+      border-radius: 20px;
+
+      .form-control {
+        padding: 0.3rem 0.75rem;
+        width: 0;
+        border: none;
+        background-color: transparent;
+      }
+
+      .input-group-append,
+      .input-group-prepend {
+        background-color: transparent;
+        border: none;
+
+        .input-group-text {
+          background-color: transparent;
+          color: #fff;
+          border: none;
+        }
+
+        &.search-close {
+          display: none;
+        }
+      }
+    }
+
+    &.open {
+      color: #000;
+      line-height: 1;
+
+      .input-group {
+        background-color: #fff;
+
+        .form-control {
+          display: block;
+        }
+
+        .input-group-append,
+        .input-group-prepend {
+          .input-group-text {
+            color: #000;
+          }
+
+          &.search-close {
+            display: flex;
+          }
+        }
+      }
+    }
+  }
+}
+
+.mobile-links-ul {
+  @include tablet-mobile {
+    display: inline-block;
+    a {
+      margin: 10px 25px;
+      display: inline !important;
+      font-size: 12px !important;
+      i {
+        font-size: 35px;
+        position: absolute;
+        top: 10px;
+      }
+      span {
+        display: block;
+        width: 100px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.settings-container {
+  @include tablet-mobile {
+    float: right;
+  }
+}
+
+.header-notification {
+  a {
+    font-size: 15px !important;
+  }
+  /*@media (min-width: 320px) and (max-width: 480px) {
+    a {
+      font-size: 13px !important;
+    }
+  }*/
+}
+
+.menu-links-mobile {
+  display: none;
+  @include tablet-mobile {
+    display: inline-block;
+    height: 90px;
+  }
+  @include mobile {
+    padding: 0 0.4rem !important;
+  }
+
+  @include iphonePlus {
+    padding: 0 0.8rem !important;
+  }
+
+  @include tablet {
+    margin: 0 19px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+}
+
+.pcoded-header {
+  @media (min-width: 320px) and (max-width: 480px) {
+    border-bottom: 1px solid white;
+  }
+}
+
+.top-selects {
+  .form-control {
+    width: 30% !important;
+  }
+}
+
+.pv-date {
+  padding-top: 0.5rem;
+  padding-right: 10px;
+  color: white;
+}
+
+.top-selects {
+  display: inherit;
+
+  &.client-search {
+    text-align: right;
+    display: block;
+  }
+
+  .btn {
+    font-size: 14px;
+  }
+  .form-control {
+    width: 30% !important;
+    background: transparent;
+    color: white;
+    border-color: white;
+    option {
+      color: black;
+    }
+
+    &:focus {
+      border-bottom: 1px solid white;
+    }
+  }
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    .form-control {
+      width: 30% !important;
+    }
+  }
+  @media screen and (max-width: 32em) {
+    .form-control {
+      width: 50% !important;
+      margin-left: 0;
+    }
+  }
+}
+
+.datatable-header-cell {
+  &.sort-asc {
+    .datatable-header-cell-label {
+      &:before {
+        color: #666;
+      }
+    }
+  }
+  &.sort-desc {
+    .datatable-header-cell-label {
+      &:after {
+        color: #666;
+      }
+    }
+  }
+  .datatable-header-cell-label {
+    &:before {
+      content: "\eb56";
+      right: 15px;
+      font-family: 'IcoFont' !important;
+      position: absolute;
+      top: 10px;
+      color: #ccc;
+      font-size: 20px;
+    }
+    &:after {
+      content: "\eb53";
+      right: 10px;
+      font-family: 'IcoFont' !important;
+      position: absolute;
+      top: 10px;
+      color: #ccc;
+      font-size: 20px;
+    }
+  }
+}
+
+.datatable-header-cell {
+  &:before {
+    display: none;
+  }
+  &:after {
+    display: none;
+  }
+}
+
+.accept-reject-row {
+  display: none;
+}
+
+.buy-sell-card-row {
+  display: none;
+}
+
+.request {
+  .accept-reject-row {
+    display: flex;
+    button {
+      width: 100%;
+    }
+  }
+  .buy-sell-card-row {
+    display: block;
+  }
+  .request-row {
+    display: none;
+  }
+  .divider {
+    display: none;
+  }
+  .accounts-row {
+    display: none;
+  }
+}
+
+.divider {
+  border-top: 1px solid #c1c1c1;
+  margin-right: 5px;
+  margin-left: -5px;
+  margin-bottom: 25px;
+}
+
+.req-btn {
+  width: 100%;
+}
+
+/*.maturity-col {
+  padding: 0;
+  @media screen and (max-width: 32em) {
+    width: 50% !important;
+  }
+  .date-input {
+    max-width: 130px;
+    margin-left: 0 !important;
+    @media screen and (max-width: 32em) {
+      width: 50% !important;
+    }
+  }
+}
+
+.maturity-label {
+  margin-left: -15px;
+  @media screen and (max-width: 32em) {
+    margin-left: 0;
+  }
+}*/
+.date-input-group {
+  /* position: relative;
+   .input-group-append {
+     position: absolute;
+     right: 0;
+     height: 2.14rem;
+   }*/
+}
+
+.buy-sell-card-main {
+  .card-header {
+    border: none;
+  }
+  .currency-type {
+    font-size: 13px;
+    border: 1px solid #cccccc !important;
+  }
+  .currency-value {
+    @media screen and (max-width: 32em) {
+      width: 47% !important;
+    }
+    &.buy-curr {
+      margin-left: 0;
+    }
+  }
+}
+
+/*.plus-modal {
+  width: 25%;
+  .dl-horizontal {
+    dd, dt {
+      !*
+              padding-left: 0;
+              padding-right: 0;*!
+      text-align: left;
+      border-bottom: 1px solid #c1c1c1;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    dt {
+      label {
+        padding: 0;
+        font-size: 10px;
+      }
+      &.m-t-0 {
+        margin-top: 0 !important;
+      }
+    }
+    dd {
+      margin-bottom: 0;
+      padding-bottom: .5rem;
+
+      label {
+        font-weight: normal;
+      }
+      .debit-label {
+        margin-right: 11px;
+      }
+      .credit-label {
+        margin-right: 7px;
+      }
+
+      select {
+        margin-left: 0;
+        width: 70%;
+        font-size: 12px;
+      }
+    }
+  }
+  .confirm-close-row {
+    button {
+      width: 100%;
+    }
+    .print-col {
+      padding-top: 2px;
+      font-size: 24px;
+    }
+  }
+  .req-btn {
+    width: 92%;
+  }
+  .entity-row {
+    display: inline-block;
+    width: 100%;
+  }
+  .divider {
+    margin: 0;
+  }
+  .card {
+    padding: 0;
+  }
+  .select-spot {
+    margin-right: 10px
+  }
+  .currency-value {
+    width: 80%;
+  }
+  .currency-type {
+    font-size: 13px;
+    width: 100% !important;
+    border: 1px solid #cccccc !important;
+  }
+}*/
+
+.filter-on-mob {
+  @media screen and (max-width: 32em) {
+    padding-top: 6px;
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 5px;
+  }
+}
+
+.sort-alt {
+  -webkit-transform-origin: left top;
+  -moz-transform: rotate(90deg);
+  -moz-transform-origin: left top;
+  -ms-transform: rotate(90deg);
+  -ms-transform-origin: left top;
+  -o-transform: rotate(90deg);
+  -o-transform-origin: left top;
+  transform: rotate(90deg);
+  transform-origin: left top;
+  position: absolute;
+  top: 40%;
+  left: 28%;
+  white-space: nowrap;
+  @media screen and (max-width: 32em) {
+    left: 33%;
+  }
+}
+
+.bg-success {
+  background-color: #9ccc65 !important;
+}
+
+.buy-sell-actions {
+  display: inline;
+  cursor: pointer;
+}
+
+.buy-sell-card-add {
+  .card-block {
+    display: flex;
+    height: 100%;
+    min-height: 400px;
+    a {
+      cursor: pointer;
+      width: 100%;
+      text-align: center;
+      padding: 10px;
+    }
+    .icofont-plus {
+      font-size: 40px
+    }
+  }
+}
+
+.card-block {
+  .form-control {
+    width: 100% !important;
+  }
+  .f-64 {
+    @media screen and (max-width: 32em) {
+      font-size: 45px;
+    }
+  }
+  .label {
+    border-radius: 0;
+    font-size: 14px;
+    border-color: #c1c1c1;
+  }
+  .digit {
+    padding-right: 115px;
+  }
+  .buy-sell-card {
+    padding-left: 0;
+    .card {
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+}
+
+.buy-sell-card-main {
+  .form-control {
+    border: 1px solid #cccccc !important;
+  }
+
+  .form-control {
+    &:hover {
+      border: 1px solid #cccccc !important;
+    }
+    &:focus {
+      border: 1px solid #cccccc !important;
+    }
+  }
+}
+
+.form-control {
+  width: 100% !important;
+  height: 2.14rem !important;
+}
+
+.ag-row-group {
+  .ag-icon-expanded {
+    background: none;
+    font-family: 'IcoFont' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    &:before {
+      content: "\f0a3";
+    }
+  }
+
+  .ag-icon-contracted {
+    background: none;
+    font-family: 'IcoFont' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    &:before {
+      content: "\f072";
+    }
+  }
+}
+

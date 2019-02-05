@@ -1,0 +1,39 @@
+
+@import "~ag-grid-community/dist/styles/ag-grid.css";
+@import "~ag-grid-community/dist/styles/ag-theme-balham.css";
+@import "~ag-grid-community/dist/styles/ag-theme-dark.css";
+@import "~ag-grid-community/dist/styles/ag-theme-fresh.css";
+
+@import '~bootstrap/scss/bootstrap';
+
+@import "partials/variables";
+@import "partials/mixins";
+@import "partials/general";
+@import "partials/generic";
+
+// Menu
+@import "partials/menu/menu";
+@import "partials/menu/horizontal-menu";
+
+// Important Theme elements
+@import "partials/theme-elements/button";
+@import "partials/theme-elements/form-elements";
+
+// Theme elements
+@import "partials/theme-elements/label-badges";
+
+// Other
+@import "partials/other/chat";
+@import "partials/other/progress-bar";
+
+// Responsive css
+@import "partials/responsive/responsive";
+
+// dark layout css
+// dark layout css
+@import "partials/dark";
+
+//angular custom
+@import "partials/custom";
+@import "../app/pages/clients/client-details/client-details.component";
+@import "../app/pages/clients/client-list/client-list.component";

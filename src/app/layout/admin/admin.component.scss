@@ -1,0 +1,139 @@
+.header-search {
+  line-height: 0.8;
+
+  .main-search {
+    padding: 9px 0;
+    display: block;
+
+    .input-group {
+      margin-bottom: 0;
+      background-color: transparent;
+      border-radius: 20px;
+
+      .form-control {
+        padding: 0.3rem 0.75rem;
+        width: 0;
+        border: none;
+        background-color: transparent;
+      }
+
+      .input-group-append,
+      .input-group-prepend {
+        background-color: transparent;
+        border: none;
+
+        .input-group-text {
+          background-color: transparent;
+          color: #fff;
+          border: none;
+        }
+
+        &.search-close {
+          display: none;
+        }
+      }
+    }
+
+    &.open {
+      color: #000;
+      line-height: 1;
+
+      .input-group {
+        background-color: #fff;
+
+        .form-control {
+          display: block;
+        }
+
+        .input-group-append,
+        .input-group-prepend {
+          .input-group-text {
+            color: #000;
+          }
+
+          &.search-close {
+            display: flex;
+          }
+        }
+      }
+    }
+  }
+}
+
+.form-control {
+  &.search-prime {
+    width: 0 !important;
+  }
+}
+
+.toggle-mega-menu {
+}
+
+.pcoded-header {
+  position: relative;
+}
+.box-view{
+  a{
+    padding: 0 !important;
+  }
+  i{
+    font-weight: bold;
+  }
+}
+
+
+
+.mega-menu {
+  position: absolute;
+  top: 40px;
+  left: 22.6rem;
+  max-width: 650px;
+  visibility: hidden;
+  background: white;
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 10px -1px rgba(69, 90, 100, 0.3);
+  border: none;
+
+  &.opened {
+    visibility: visible;
+  }
+
+  .text-content {
+    padding: 20px;
+    background: linear-gradient(to right, #fb1b4f, #231e1e);
+    color: white;
+  }
+  .icon-content {
+    padding-top: 5%;
+
+    &.dark{
+        background-color: #4f4f4f;
+    }
+    .col-lg-4{
+      font-size: 30px;
+      text-align: center;
+      .app-name{
+        font-size: 12px;
+        padding-bottom: 10px;
+      }
+
+      &:hover{
+        background-color: #231e1e;
+        color: white;
+      }
+    }
+    .icons-heading{
+      font-size: 12px;
+      padding-top: 20px;
+    }
+  }
+}
+
+.img-menu-user {
+  width: 80px !important;
+}
+.pcoded-trigger{
+  &.active{
+    // color: #9ccc65 !important;
+  }
+}

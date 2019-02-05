@@ -1,0 +1,53 @@
+<div class="" *ngFor="let breadcrumb of breadcrumbs; let last = last">
+  <div class="page-header" *ngIf="breadcrumb.status && last">
+    <div class="page-block" *ngIf="last">
+      <div class="row align-items-center">
+        <div class="col-sm-3 col-md-3 breadcrumb-links">
+          <div class="page-header-title">
+            <span *ngFor="let breadcrumb of breadcrumbs; let last = last"><h4 *ngIf="last" class="m-b-10">{{ breadcrumb.label }}</h4></span>
+            <!--<p class="m-b-0" *ngIf="breadcrumb.caption">{{ breadcrumb.caption }}</p>-->
+          </div>
+          <ul class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a [routerLink]="['/daily/monitoring/']">
+                <i class="feather icon-home"></i>
+              </a>
+            </li>
+            <li class="breadcrumb-item" *ngFor="let breadcrumb of breadcrumbs;" [hidden]="!breadcrumb.label.length">
+              <a [ngClass]="breadcrumb.status === false ? 'not-active': ''"
+                 [routerLink]="breadcrumb.url"
+              >{{breadcrumb.label}}</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-3 col-md-3 col-xs-3 top-selects cop-top-selects" *ngIf="renderRefreshRow">
+          <!--<span class="pv-date">COP Date:</span>
+          <input class="form-control cop-date-input"
+                 type="text"
+                 placeholder="dd-mmm-yyyy" name="dp"
+                 [(ngModel)]="copDate"
+                 ngbDatepicker #d="ngbDatepicker">
+          <span class="input-group-text cop-date-icon" (click)="d.toggle()">
+                    <i class="icofont icofont-ui-calendar"></i>
+                  </span>-->
+        </div>
+        <div class="col-sm-6 col-md-6 col-xs-6 top-selects refresh-col" *ngIf="renderRefreshRow">
+          <button class="btn btn-success  btn-sm m-r-10" (click)="setRefreshCounters()">
+            <i class="icofont icofont-refresh"></i>
+            Refresh
+          </button>
+          <button class="btn btn-success  btn-sm">
+            <i class="icofont icofont-eye-alt"></i>
+            View Metrics
+          </button>
+        </div>
+        <div class="col-sm-9 col-md-9 col-xs-9 top-selects client-search" *ngIf="renderReportRow">
+          <button class="btn btn-success btn-sm" [routerLink]="'/clients/createreport'">
+            <i class="icofont icofont-file-pdf"></i>
+            Create Report
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

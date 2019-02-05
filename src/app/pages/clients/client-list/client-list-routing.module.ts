@@ -1,0 +1,22 @@
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {ClientListComponent} from './client-list.component';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: ClientListComponent,
+    data: {
+      title: 'Client List',
+      icon: 'icon-home',
+      caption: 'lorem ipsum dolor sit amet, consectetur adipisicing elit',
+      status: true
+    }
+  }
+];
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
+})
+export class ClientListRoutingModule { }

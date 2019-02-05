@@ -1,0 +1,21 @@
+
+// General theme contents
+@import "partials/variables";
+@import "partials/mixins";
+// theme-elements
+@import "partials/theme-elements/box-shadow";
+// pages
+@import "partials/pages/icon-layout";
+@import "partials/pages/authentication";
+@import "partials/pages/breadcrumb";
+@import "partials/pages/charts";
+@import "partials/pages/color";
+@import "partials/pages/draggable";
+@import "partials/pages/prism";
+@import "partials/pages/pre-loader";
+@import "partials/pages/genral_pages";
+
+@import "partials/admin/admin.component";
+@import "partials/trading/trading";
+@import "partials/landing/landing-page-component";
+@import "partials/bulk/bulk.component";

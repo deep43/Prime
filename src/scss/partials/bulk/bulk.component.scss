@@ -1,0 +1,31 @@
+.dt-cust-search {
+  @include mobile {
+    float: none !important;
+  }
+}
+.accounts-dropdown{
+  border: 1px solid #c1c1c1 !important;
+}
+
+.top-selects {
+  display: inherit;
+  .form-control {
+    width: 30% !important;
+    background: transparent;
+    color: white;
+    border-color: white;
+    option{
+      color: black;
+    }
+  }
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    .form-control {
+      width: 30% !important;
+    }
+  }
+  @media screen and (max-width: 32em){
+    .form-control {
+      width: 50% !important;
+    }
+  }
+}
