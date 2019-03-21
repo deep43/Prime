@@ -1,3 +1,24 @@
-<p>
-  report-chart works!
-</p>
+<app-card class="report-chart">
+  <!--<div class="col-md-12 col-lg-4">
+    <div style="width: 100%; height: 470px;">
+      <canvas baseChart
+              [datasets]="barChartData"
+              [labels]="barChartLabels"
+              [options]="barChartOptions"
+              [legend]="barChartLegend"
+              [chartType]="barChartType"></canvas>
+    </div>
+  </div>-->
+  <div class="row">
+    <div class="col-md-3 col-lg-3">
+      <app-card>
+        <chart [type]="type1" [data]="data1" [options]="options" style="width: 100%; height: 470px;"></chart>
+      </app-card>
+    </div>
+    <div class="col-md-8 col-lg-8">
+      <app-card>
+        <chart [type]="type2" [data]="data2" [options]="options" style="width: 100%; height: 470px;"></chart>
+      </app-card>
+    </div>
+  </div>
+</app-card>

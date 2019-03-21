@@ -8,7 +8,6 @@
 
 @import "partials/variables";
 @import "partials/mixins";
-@import "partials/general";
 @import "partials/generic";
 
 // Menu
@@ -23,17 +22,13 @@
 @import "partials/theme-elements/label-badges";
 
 // Other
-@import "partials/other/chat";
 @import "partials/other/progress-bar";
 
 // Responsive css
 @import "partials/responsive/responsive";
 
 // dark layout css
-// dark layout css
 @import "partials/dark";
 
 //angular custom
 @import "partials/custom";
-@import "../app/pages/clients/client-details/client-details.component";
-@import "../app/pages/clients/client-list/client-list.component";

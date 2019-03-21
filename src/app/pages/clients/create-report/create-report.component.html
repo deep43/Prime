@@ -1,39 +1,469 @@
-<app-card>
-  <wizard #wizard class="arc-wizard" navBarLayout="large-empty-symbols">
-    <wizard-step stepTitle="Profile" navigationSymbol="1">
+<app-card class="create-report">
+  <wizard #wizard class="arc-wizard" navBarLayout="large-empty-symbols" navigationMode="free">
+    <wizard-step optionalStep stepTitle="Report Details" navigationSymbol="1">
       <div class="centered-content">
-        <div>
-          <h3>Content: Profile</h3>
-        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6 col-md-6 report-details-form-col">
+              <form class="form-material" action="javascript:">
+                <div class="form-group form-default">
+                  <input type="text" name="report name" class="form-control" required=""
+                         value="New Report - my new one">
+                  <span class="form-bar"></span>
+                  <label class="float-label">Report Name</label>
+                </div>
+                <div class="form-group region">
+                  <select name="select" class="form-control">
+                    <option value="opt2">New York</option>
+                    <option value="opt3">Canada</option>
+                    <option value="opt4">Australia</option>
+                    <option value="opt5">China</option>
+                  </select>
+                </div>
+                <div class="form-group form-default">
+                  <input type="text" name="report name" class="form-control" required=""
+                         value="Welcome to your new report">
+                  <span class="form-bar"></span>
+                  <label class="float-label">Description</label>
+                </div>
+                <div class="form-radio">
+                  <form>
+                    <div class="radio radio-inline">
+                      <label>
+                        <input type="radio" name="radio" checked="checked">
+                        <i class="helper"></i>Active
+                      </label>
+                    </div>
+                    <div class="radio radio-inline">
+                      <label>
+                        <input type="radio" name="radio">
+                        <i class="helper"></i>Inactive
+                      </label>
+                    </div>
+                  </form>
+                </div>
+              </form>
+            </div>
+            <div class="col-sm-4 col-md-4 report-history-col">
+              <app-card class="report-history">
+                <h5>Report History</h5>
+                <div class="m-t-10 m-l-20 ">
+                  <div class="details">Created By: anonymous</div>
+                  <div class="details">Created On: 19/12/2018 4:17 PM</div>
+                  <div class="details">Modified By: anonymous</div>
+                  <div class="details">Modified On: 20/12/2018 3:25 PM</div>
+                </div>
+              </app-card>
+            </div>
+            <div class="col-sm-2 col-md-2">
 
-        <div class="btn-group mt-10">
-          <button type="button" class="btn btn-primary btn-sm" nextStep>Continue</button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </wizard-step>
+    <wizard-step optionalStep stepTitle="Counter Parties" navigationSymbol="2">
+      <div class="counter-parties">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 col-md-12">
+              <div class="form-radio">
+                <form>
+                  <div class="radio radio-inline">
+                    <label>
+                      <input type="radio" name="radio" checked="checked" (click)="changeAccountRadio('all')">
+                      <i class="helper"></i>All
+                    </label>
+                  </div>
+                  <div class="radio radio-inline">
+                    <label>
+                      <input type="radio" name="radio" (click)="changeAccountRadio('include')">
+                      <i class="helper"></i>Include
+                    </label>
+                  </div>
+                  <div class="radio radio-inline">
+                    <label>
+                      <input type="radio" name="radio" (click)="changeAccountRadio('exclude')">
+                      <i class="helper"></i>Exclude
+                    </label>
+                  </div>
+                </form>
+                <div class="container table-container">
+                  <div class="row filter-row">Filter</div>
+                  <div class="row">
+                    <div class="col-sm-8">Account No.</div>
+                    <div class="col-sm-4">
+                      <div class="chk-option">
+                        <div class="checkbox-fade fade-in-primary">
+                          <label class="check-task">
+                            <input type="checkbox" class="case" name="case"
+                                   (change)="onAllChange()" [checked]="allAccountChecked"/>
+                            <span class="cr">
+                                <i class="cr-icon feather icon-check f-w-600 txt-default"></i>
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="scroll-table">
+                    <div class="row" *ngFor="let account of accounts">
+                      <div class="col-sm-8">
+                        <i class="icofont icofont-plus-square tree" (click)="toggleAccounts(account)"
+                           [hidden]="!account.childHidden"></i>
+                        <i class="icofont icofont-minus-square tree" (click)="toggleAccounts(account)"
+                           [hidden]="account.childHidden"></i>
+                        {{account.number}}
+                        <div class="child-accounts" [hidden]="account.childHidden"
+                             *ngFor="let childAccount of account.childAccounts">
+                          <div class="row">
+                            <div class="col-sm-11">{{childAccount.number}}</div>
+                            <div class="col-sm-1">
+                              <div class="chk-option">
+                                <div class="checkbox-fade fade-in-primary">
+                                  <label class="check-task">
+                                    <input type="checkbox" class="case" name="case" [checked]="childAccount.selected"/>
+                                    <span class="cr">
+                                <i class="cr-icon feather icon-check f-w-600 txt-default"></i>
+                            </span>
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="chk-option">
+                          <div class="checkbox-fade fade-in-primary">
+                            <label class="check-task">
+                              <input type="checkbox" class="case" name="case" [checked]="account.selected"/>
+                              <span class="cr">
+                                <i class="cr-icon feather icon-check f-w-600 txt-default"></i>
+                            </span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <!--<div class="row">
+            <div class="col-sm-12 col-md-12 button-col">
+              <div class="btn-group mt-10">
+                <button type="button" class="btn btn-outline-secondary btn-sm back-btn" previousStep>Back</button>
+                <button type="button" class="btn btn-outline-success btn-sm" nextStep>Next</button>
+              </div>
+            </div>
+          </div>-->
         </div>
       </div>
     </wizard-step>
-    <wizard-step stepTitle="Address" navigationSymbol="2">
-      <div class="centered-content">
-        <div>
-          <h3>Content: Address</h3>
-        </div>
-
-        <div class="btn-group mt-10">
-          <button type="button" class="btn btn-secondary btn-sm" previousStep>Back</button>
-          <button type="button" class="btn btn-primary btn-sm" nextStep>Continue</button>
+    <wizard-step optionalStep stepTitle="Layout" navigationSymbol="3">
+      <div class="">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 col-md-12">
+              <app-card>
+                <div class="md-tabs step-3">
+                  <ngb-tabset>
+                    <ngb-tab>
+                      <ng-template ngbTabTitle>
+                        <div (click)="addGrid(activities)">
+                          <i class="tab-ico icofont icofont-plus"></i>Add Activity
+                        </div>
+                      </ng-template>
+                      <ng-template ngbTabContent>
+                        <!---->
+                        <div *ngFor="let activity of activities; let i = index" class="m-t-15">
+                          <div class="tab-header-row">
+                            <span>Account #{{i+1}}: Report Preview </span>
+                            <div class="icons">
+                              <i class="icofont icofont-arrow-up"></i>
+                              <i class="icofont icofont-arrow-down"></i>
+                              <i class="icofont icofont-trash"></i>
+                              <i class="icofont icofont-caret-down" [hidden]="activity.shown"
+                                 (click)="toggleGrid(activity)"></i>
+                              <i class="icofont icofont-caret-up" [hidden]="!activity.shown"
+                                 (click)="toggleGrid(activity)"></i>
+                            </div>
+                          </div>
+                          <ag-grid-angular [hidden]="!activity.shown"
+                                           class="{{appliedThemeClassOnTable}}"
+                                           [rowData]="rowData"
+                                           [columnDefs]="columnDefs"
+                                           [defaultColDef]="defaultColDef"
+                                           [floatingFilter]="true"
+                                           [pagination]="true"
+                                           [sideBar]="true"
+                                           (firstDataRendered)="onFirstDataRendered($event)"
+                          ></ag-grid-angular>
+                        </div>
+                      </ng-template>
+                    </ngb-tab>
+                    <ngb-tab>
+                      <ng-template ngbTabTitle>
+                        <div (click)="addGrid(cashBalances)">
+                          <i class="tab-ico icofont icofont-plus"></i>Add Cash Balance
+                        </div>
+                      </ng-template>
+                      <ng-template ngbTabContent>
+                        <div *ngFor="let cashBalance of cashBalances; let i = index" class="m-t-15">
+                          <div class="tab-header-row">
+                            <span>Account #{{i+1}}: Report Preview </span>
+                            <div class="icons">
+                              <i class="icofont icofont-arrow-up"></i>
+                              <i class="icofont icofont-arrow-down"></i>
+                              <i class="icofont icofont-trash"></i>
+                              <i class="icofont icofont-caret-down" [hidden]="cashBalance.shown"
+                                 (click)="toggleGrid(cashBalance)"></i>
+                              <i class="icofont icofont-caret-up" [hidden]="!cashBalance.shown"
+                                 (click)="toggleGrid(cashBalance)"></i>
+                            </div>
+                          </div>
+                          <ag-grid-angular [hidden]="!cashBalance.shown"
+                                           class="{{appliedThemeClassOnTable}}"
+                                           [rowData]="rowData"
+                                           [columnDefs]="columnDefs"
+                                           [defaultColDef]="defaultColDef"
+                                           [floatingFilter]="true"
+                                           [pagination]="true"
+                                           [sideBar]="true"
+                                           (firstDataRendered)="onFirstDataRendered($event)"
+                          ></ag-grid-angular>
+                        </div>
+                      </ng-template>
+                    </ngb-tab>
+                  </ngb-tabset>
+                </div>
+              </app-card>
+            </div>
+          </div>
+          <!--<div class="row">
+            <div class="col-sm-12 col-md-12 button-col">
+              <div class="btn-group mt-10">
+                <button type="button" class="btn btn-outline-secondary btn-sm back-btn" previousStep>Back</button>
+                <button type="button" class="btn btn-outline-success btn-sm" nextStep>Next</button>
+              </div>
+            </div>
+          </div>-->
         </div>
       </div>
     </wizard-step>
-    <wizard-step stepTitle="Finished" navigationSymbol="3">
-      <div class="centered-content">
-        <div>
-          <h3>Content: Thank's</h3>
+    <wizard-step optionalStep stepTitle="Schedule" navigationSymbol="4">
+      <div class="step-4">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 col-md-12">
+              <div>
+                <button class="btn btn-inverse btn-outline-inverse" (click)="onAddClick({})">
+                  Add Schedule
+                </button>
+              </div>
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-8">
+                    <div class="row table-row-class">
+                      <div class="col-md-5 text-muted">Occurance</div>
+                      <div class="col-md-5 text-muted">Pattern</div>
+                      <div class="col-md-1"></div>
+                      <div class="col-md-1"></div>
+                    </div>
+                    <div class="row table-row-class"
+                         *ngFor="let schedule of schedules" [hidden]="schedule.isDeleted">
+                      <div class="col-md-5">{{schedule.occurance}}</div>
+                      <div class="col-md-5">
+                        {{schedule.pattern.year +'-'+schedule.pattern.month+'-'+
+                        ((schedule.pattern.day%10) ? '0'+schedule.pattern.day : schedule.pattern.day)}}
+                      </div>
+                      <div class="col-md-1">
+                        <i class="icofont icofont-ui-edit"
+                           (click)="onAddClick(schedule)"></i></div>
+                      <div class="col-md-1">
+                        <i class="icofont icofont-minus-circle"
+                           (click)="onDeleted(schedule)"></i></div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <ngb-datepicker #dp (navigate)="date = $event.next"></ngb-datepicker>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--<div class="row">
+            <div class="col-sm-12 col-md-12 button-col">
+              <div class="btn-group mt-10">
+                <button type="button" class="btn btn-outline-secondary btn-sm back-btn" previousStep>Back</button>
+                <button type="button" class="btn btn-outline-success btn-sm" nextStep>Next</button>
+              </div>
+            </div>
+          </div>-->
         </div>
+      </div>
+    </wizard-step>
+    <wizard-step optionalStep stepTitle="Distribution" navigationSymbol="5">
+      <div class="distribution">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6 col-md-6">
+              <app-card>
+                <div class="p-b-10">Select distribution format</div>
+                <div class="chk-option">
+                  <div class="checkbox-fade fade-in-primary">
+                    <label class="check-task">
+                      <input type="checkbox" class="case" name="case"/>
+                      <span class="cr">
+                          <i class="cr-icon feather icon-check f-w-600 txt-default"></i>
+                      </span>
+                      CSV
+                    </label>
+                  </div>
+                </div>
+                <div class="chk-option">
+                  <div class="checkbox-fade fade-in-primary">
+                    <label class="check-task">
+                      <input type="checkbox" class="case" name="case"/>
+                      <span class="cr">
+                          <i class="cr-icon feather icon-check f-w-600 txt-default"></i>
+                      </span>
+                      PDF
+                    </label>
+                  </div>
+                </div>
+                <div class="chk-option">
+                  <div class="checkbox-fade fade-in-primary">
+                    <label class="check-task">
+                      <input type="checkbox" class="case" name="case"/>
+                      <span class="cr">
+                          <i class="cr-icon feather icon-check f-w-600 txt-default"></i>
+                      </span>
+                      XLSX
+                    </label>
+                  </div>
+                </div>
+                <div class="form-radio">
+                  <div class="p-b-5 p-t-20">File name format:</div>
+                  <form>
+                    <div class="radio radio-inline">
+                      <label>
+                        <input type="radio" name="radio" checked="checked">
+                        <i class="helper"></i>Predefined
+                      </label>
+                    </div>
+                    <div class="radio radio-inline">
+                      <label>
+                        <input type="radio" name="radio">
+                        <i class="helper"></i>Custom
+                      </label>
+                    </div>
 
-        <div class="btn-group mt-10">
-          <button type="button" class="btn btn-secondary btn-sm" previousStep>Back</button>
-          <button type="button" class="btn btn-danger btn-sm" resetWizard>Reset</button>
+                  </form>
+                  <form class="form-material" action="javascript:">
+                    <div class="form-group region">
+                      <select name="select" class="form-control file-names">
+                        <option value="opt2">File name template</option>
+                        <option value="opt3">File name template 1</option>
+                        <option value="opt4">File name template 2</option>
+                        <option value="opt5">File name template 3</option>
+                      </select>
+                    </div>
+                  </form>
+
+                </div>
+              </app-card>
+
+            </div>
+          </div>
+          <!--<div class="row">
+            <div class="col-sm-12 col-md-12 button-col">
+              <div class="btn-group mt-10">
+                <button type="button" class="btn btn-outline-secondary btn-sm back-btn" previousStep>Back</button>
+                <button type="button" class="btn btn-outline-success btn-sm" nextStep>Next</button>
+              </div>
+            </div>
+          </div>-->
+        </div>
+      </div>
+    </wizard-step>
+    <wizard-step optionalStep stepTitle="Finished" navigationSymbol="6">
+      <div class="">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 col-md-12">
+              <div>
+                This report is now finished, Please click on the "Save Report" to save it.
+              </div>
+              <div>
+
+              </div>
+              <button type="button" class="btn btn-success btn-sm m-t-10" previousStep>Save Report</button>
+            </div>
+          </div>
+          <!--<div class="row">
+            <div class="col-sm-12 col-md-12 button-col">
+              <div class="btn-group mt-10">
+                <button type="button" class="btn btn-outline-secondary btn-sm" previousStep>Back</button>
+              </div>
+            </div>
+          </div>-->
         </div>
       </div>
     </wizard-step>
   </wizard>
 </app-card>
+<app-modal-animation [modalID]="'effect-2'" [modalClass]="'md-effect-1 plus-modal chat-modal'">
+  <div class="card">
+    <div class="card-block">
+      <div class="row heading-row">
+        <h5 class="heading">
+          Add / Edit Schedule
+        </h5>
+      </div>
+      <div class="row">
+        <div class="col-lg-12 p-t-30">
+          <form class="form-material" action="javascript:">
+            <div class="form-group region">
+              <label class="p-r-15 p-t-5">Occurance</label>
+              <select name="select" [(ngModel)]="selectedSchedule.occurance"
+                      placeholder="occurance"
+                      class="form-control file-names">
+                <option value="Daily">Daily</option>
+                <option value="Weekly">Weekly</option>
+                <option value="Monthly">Monthly</option>
+              </select>
+            </div>
+          </form>
+        </div>
+        <div class="col-lg-12 date-pattern">
+          <label class="m-r-40 p-t-5">Pattern</label>
+          <input class="form-control"
+                 placeholder="yyyy-mm-dd" name="dp"
+                 [(ngModel)]="selectedSchedule.pattern"
+                 ngbDatepicker #d="ngbDatepicker">
+          <div class="input-group-append p-l-0">
+                  <span class="input-group-text" (click)="d.toggle()">
+                    <i class="icofont icofont-ui-calendar"></i>
+                  </span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12 close-row">
+          <button class="btn btn-success btn-sm" (click)="saveSchedule($event)">
+            Save
+          </button>
+          <button class="btn btn-default btn-sm" (click)="closeMyModal($event)">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</app-modal-animation>

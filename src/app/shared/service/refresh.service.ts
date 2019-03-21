@@ -4,6 +4,8 @@ import {Observable, Subject} from 'rxjs';
 @Injectable({providedIn: 'root'})
 export class RefreshService {
   private refreshCounter = new Subject<any>();
+  private ObservableTheme = new Subject<any>();
+  private theme = '';
 
   setRefreshCounter(counter: number) {
     this.refreshCounter.next(counter);
@@ -13,11 +15,16 @@ export class RefreshService {
     return this.refreshCounter.asObservable();
   }
 
-  setTheme(theme: string) {
-    this.refreshCounter.next(theme);
+  setObservableTheme(theme: string) {
+    this.ObservableTheme.next(theme);
+    this.theme = theme;
   }
 
-  getTheme(): Observable<any> {
-    return this.refreshCounter.asObservable();
+  getObservableTheme(): Observable<any> {
+    return this.ObservableTheme.asObservable();
+  }
+
+  getTheme() {
+    return this.theme;
   }
 }

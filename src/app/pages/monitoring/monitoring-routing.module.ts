@@ -15,7 +15,23 @@ const routes: Routes = [
           title: '',
           status: false
         },
-        loadChildren: './daily/trading.module#TradingModule',
+        loadChildren: './reports-pending/report-pending.module#ReportPendingModule',
+      },
+      {
+        path: 'charts',
+        data: {
+          title: '',
+          status: false
+        },
+        loadChildren: './reports-chart/report-chart.module#ReportChartModule',
+      },
+      {
+        path: 'sent',
+        data: {
+          title: '',
+          status: false
+        },
+        loadChildren: './reports-sent/report-sent.module#ReportSentModule',
       }
     ]
   }

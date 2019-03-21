@@ -30,9 +30,9 @@
             "styles": [
               "node_modules/font-awesome-scss/scss/font-awesome.scss",
               "src/scss/style.scss",
-              "src/scss/widget.scss",
               "src/scss/pages.scss",
-              "src/assets/icon/feather/css/feather.css"
+              "src/assets/icon/feather/css/feather.css",
+              "src/assets/icon/themify/themify-icons.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js"

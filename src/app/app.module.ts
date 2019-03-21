@@ -1,15 +1,16 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 import {AppRoutingModule} from './app-routing.module';
 
 import {AppComponent} from './app.component';
-import {AdminComponent} from './layout/admin/admin.component';
-import {AuthComponent} from './layout/auth/auth.component';
+import {MainLayoutComponent} from './layout/main-layout/main-layout.component';
+import {PlainLayoutComponent} from './layout/plain-layout/plain-layout.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {SharedModule} from './shared/shared.module';
-import {MenuItems} from './shared/menu-items/menu-items';
-import {BreadcrumbsComponent} from './layout/admin/breadcrumbs/breadcrumbs.component';
+import {MenuItems} from './shared/app-pages/app-pages';
+import {BreadcrumbsComponent} from './layout/main-layout/breadcrumbs/breadcrumbs.component';
 import {CountoModule} from 'angular2-counto';
 import {FormsModule} from '@angular/forms';
 
@@ -17,8 +18,8 @@ import {FormsModule} from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
-    AdminComponent,
-    AuthComponent,
+    MainLayoutComponent,
+    PlainLayoutComponent,
     BreadcrumbsComponent
   ],
   imports: [
@@ -27,7 +28,8 @@ import {FormsModule} from '@angular/forms';
     BrowserAnimationsModule,
     AppRoutingModule,
     SharedModule,
-    CountoModule
+    CountoModule,
+    MDBBootstrapModule.forRoot()
   ],
   schemas: [],
   providers: [MenuItems],

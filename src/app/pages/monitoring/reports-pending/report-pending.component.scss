@@ -1,0 +1,163 @@
+
+.details-heading {
+  padding-bottom: 20px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #c1c1c1;
+}
+
+/*.percent {
+  font-size: 30px;
+  padding-right: 0;
+}
+[vertical-layout="box"]{
+  .percent {
+    font-size: 20px;
+    padding-right: 0;
+  }
+}*/
+
+.percent {
+  font-size: 30px;
+  padding: 0 15px;
+}
+
+.progress-col {
+  padding-top: 11px;
+  padding-left: 0;
+  width: 80% !important;
+}
+
+.progress-card {
+  .card-block {
+    padding: 12px 20px;
+  }
+;
+
+  .card {
+    margin-bottom: 10px;
+  }
+}
+
+.toggle-card {
+  float: right;
+}
+
+.rows-per-page {
+  max-width: 12%;
+  display: inline-block;
+  font-size: 12px;
+  padding: 0 5px;
+}
+
+.page-change-row {
+  position: absolute;
+  bottom: 18px;
+  display: block;
+  width: 100%;
+  font-size: 12px;
+}
+
+.table-card {
+  position: relative;
+}
+
+.table-row {
+  .ag-row-hover {
+    background-color: #9ccc65 !important;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .ag-root-wrapper {
+    i {
+      font-size: 20px;
+    }
+
+    .btn-sm {
+      padding-top: 2px;
+    }
+  }
+}
+
+.chat-modal {
+  width: 30% !important;
+
+  .heading {
+    background-color: #676565;
+    text-align: center;
+    width: 100%;
+    color: white;
+    padding: 10px 0;
+    margin-bottom: 10px;
+  }
+  .heading-row {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+  .chat-row {
+    max-height: 350px;
+    overflow-y: auto;
+
+    .chat-col {
+      margin-top: 20px;
+    }
+  }
+  .card {
+    padding: 0;
+  }
+
+  .card-block {
+    padding-top: 0;
+  }
+
+  .action-row {
+    margin-top: 10px;
+    text-align: right;
+    .add-comment {
+      margin-right: 10px !important;
+      display: inline-block;
+    }
+    .cancel {
+      display: inline-block;
+      color: white;
+      background-color: #676565;
+    }
+    .btn {
+      padding: 5px !important;
+      i {
+        font-size: 18px;
+        margin-right: 0;
+      }
+    }
+  }
+
+  .close-row {
+    text-align: left;
+    .btn {
+      display: inline-block;
+    }
+  }
+}
+
+.green {
+  color: #9ccc65;
+}
+
+.client-link {
+  color: blue;
+  font-size: 12px;
+}
+
+.dark{
+  .client-link{
+    color: #ff5252 !important;
+  }
+}
+
+.ag-group-value,
+.ag-group-child-count {
+  //display: none;
+}
+

@@ -1,0 +1,158 @@
+<div class="page-body">
+  <div class="row">
+    <div class="col-sm-6 col-lg-6">
+      <app-card class="progress-card">
+        <div [ngClass]="{'hide': !completedCard}">
+          <div class="row">
+            <div class="percent">
+              <div counto [step]="30" [countTo]="50" [countFrom]="counter" [duration]="2"
+                   (countoChange)="counto = $event">
+                {{counto | number : '1.0-0' }}
+              </div>
+            </div>
+            <div class="progress-col">
+              <div class="progress progress-xs">
+                <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="50"
+                     class="progress-bar progress-bar-success" role="progressbar"
+                     [style.width]="completedPercent + '%'">
+                </div>
+              </div>
+              <div>
+                <span>Reports Sent</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </app-card>
+    </div>
+
+    <div class="col-sm-6 col-lg-6">
+      <app-card class="progress-card">
+        <div [ngClass]="{'hide': !completedCard}">
+          <div class="row">
+            <div class="percent">
+              <div counto [step]="50" [countTo]="10" [countFrom]="counter1" [duration]="1"
+                   (countoChange)="counto1 = $event">
+                {{counto1 | number : '1.0-0'}}
+              </div>
+            </div>
+            <div class="progress-col">
+              <div class="progress progress-xs">
+                <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="10"
+                     class="progress-bar progress-bar-danger" role="progressbar"
+                     [style.width]="failedPercent + '%'">
+                </div>
+              </div>
+              <div class="">
+                <span>Reports Pending</span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+          </div>
+          <div class="row">
+
+          </div>
+        </div>
+      </app-card>
+
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <app-card [title]="" [classHeader]="true" class="table-card">
+
+        <div class="row table-row">
+          <div class="col-md-12 col-sm-12 col-lg-12">
+            <ag-grid-angular
+              class="{{appliedThemeClassOnTable}}"
+              [rowData]="rowData"
+              [columnDefs]="columnDefs"
+              [defaultColDef]="defaultColDef"
+              [floatingFilter]="true"
+              [animateRows]="true"
+              [pagination]="true"
+              [paginationPageSize]="20"
+              (gridReady)="onGridReady($event)"
+              (firstDataRendered)="onFirstDataRendered($event)"
+            >
+            </ag-grid-angular>
+          </div>
+        </div>
+
+       <div class="row page-change-row">
+         <div class="col-12 col-sm-6">
+           <label class="p-r-10 filter-on-mob p-t-5">Show </label>
+           <select name="select"
+                   (change)="onPageSizeChanged()" id="page-size"
+                   class="rows-per-page"
+                   [(ngModel)]="selectedRowsPerPage">
+             <option value="10">10</option>
+             <option value="15">15</option>
+             <option value="20" selected>20</option>
+             <option value="25">25</option>
+             <option value="30">30</option>
+             <option value="35">35</option>
+             <option value="40">40</option>
+           </select>
+           <label class="p-l-10">entries</label>
+         </div>
+       </div>
+      </app-card>
+    </div>
+  </div>
+</div>
+<!--start of modals-->
+<app-modal-animation [modalID]="'effect-1'" [modalClass]="'md-effect-1 plus-modal chat-modal'">
+  <div class="card">
+    <div class="card-block">
+      <div class="row heading-row">
+        <h5 class="heading">
+          Report Notes
+        </h5>
+      </div>
+      <div class="row chat-row">
+        <div class="col-lg-12 chat-col" *ngFor="let chat of chatData">
+          <span><b class="p-r-5">{{chat.userName}}:</b>
+          {{chat.chatText}}
+          </span>
+          <div class="row">
+            <div class="col-lg-12">
+              <span><b>{{chat.Date}}</b> {{chat.time}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12 m-t-20">
+          <p>Add Note</p>
+        </div>
+        <div class="col-lg-12">
+          <input class="form-control end" placeholder="Add your comments" [(ngModel)]="chatText"
+                 (keyup.enter)="addChat()">
+        </div>
+        <div class="col-lg-12 action-row">
+          <button class="btn btn-success add-comment" type="submit" (click)="addChat()">
+            <i class="icofont icofont-verification-check"></i>
+          </button>
+          <button class="btn cancel" (click)="clearChat()">
+            <i class="icofont icofont-close"></i>
+          </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12 close-row">
+          <button class="btn btn-success btn-sm" (click)="closeMyModal($event)">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</app-modal-animation>
+<!--end of modals-->
+<ng2-toasty [position]="position"></ng2-toasty>
+
+

@@ -1,0 +1,269 @@
+::ng-deep .create-report {
+  ::ng-deep .arc-wizard .large-empty-symbols ul.steps-indicator li.current:after,
+  ::ng-deep .arc-wizard .large-empty-symbols ul.steps-indicator li.editing:after {
+    border-color: #231e1e !important;
+    color: #231e1e !important;
+  }
+
+  .button-col {
+    text-align: left;
+    padding-top: 20px;
+
+    .back-btn {
+      margin-right: 10px;
+    }
+
+    .btn-outline-success:hover {
+      color: #fff;
+      background-color: #9ccc65;
+      border-color: #9ccc65;
+    }
+
+    .btn-outline-success:focus, .btn-outline-success.focus {
+      box-shadow: 0 0 0 0.2rem #9ccc6570;
+    }
+  }
+
+  .report-details-form-col {
+    .form-group {
+      margin: 35px 0;
+
+      &.region {
+        margin-top: -20px;
+      }
+    }
+  }
+
+  .form-radio {
+    form {
+      text-align: left;
+    }
+  }
+  .report-history-col {
+    display: flex;
+  }
+  .report-history {
+    text-align: left;
+    align-self: flex-end;
+
+    .details {
+      padding-top: 10px;
+    }
+  }
+
+  .radio {
+    .helper::after, .helper::before {
+      border: 0.125rem solid #ff5252;
+    }
+    .helper::after {
+      background-color: #ff5252;
+      border: 0.125rem solid #ff5252;
+    }
+  }
+
+  .radio input:checked ~ .helper::before {
+    color: #ff5252;
+  }
+
+  .md-tabs .nav-link.active {
+    color: #ff5252;
+  }
+
+  .md-tabs .nav-item .nav-link.active {
+    border-left: none;
+    border-bottom: 4px solid #ff5252;
+  }
+
+  .md-tabs .nav-tabs .nav-link:hover {
+    border-left: none;
+    color: #9ccc65;
+    border-bottom: 4px solid #9ccc65;
+  }
+
+  .step-3 {
+    .tab-header-row {
+      display: flex;
+      background-color: #ff5252;
+      padding: 10px 20px;
+      color: white;
+
+      .icons {
+        width: 81%;
+        text-align: right;
+        i {
+          padding: 0 5px;
+        }
+      }
+    }
+    ::ng-deep.md-tabs .nav-link.active {
+      border-bottom: 4px solid #ff5252;
+    }
+
+    .tab-ico {
+      margin-right: 7px;
+    }
+    /*.tab-content {
+      margin-left: 20px;
+      max-width: 85%;
+      display: block !important;
+      position: relative !important;
+      left: 0;
+    }
+
+    ::ng-deep .md-tabs.md-left-tabs .tab-content {
+      display: block !important;
+      position: relative !important;
+      left: 0;
+    }
+
+    ngb-tabset {
+      display: flex;
+    }
+
+
+    }*/
+  }
+
+  .step-4 {
+    .table-row-class {
+      padding: 10px 20px;
+      border-bottom: 1px solid #c1c1c1;
+
+      .icofont {
+        cursor: pointer;
+      }
+    }
+
+    .btn-link {
+      color: #ff5252;
+    }
+
+    .ngb-dp-weekday {
+      color: #ff5252;
+    }
+  }
+
+  .counter-parties, .distribution {
+    .filter-row {
+      border-bottom: 1px solid #6d6d6d !important;
+    }
+
+    .table-container {
+      .row {
+        padding-top: 10px;
+        border-bottom: 1px solid #c1c1c1;
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+
+      .scroll-table {
+        /*max-height: 500px;
+        overflow-x: auto;*/
+      }
+    }
+
+    .checkbox-fade.fade-in-primary .cr, .checkbox-fade.zoom-primary .cr,
+    .checkbox-zoom.fade-in-primary .cr, .checkbox-zoom.zoom-primary .cr {
+      border: 2px solid #ff5252;
+    }
+
+    .icon-check:before {
+      color: #ff5252;
+    }
+
+    .file-names {
+      width: 60% !important;
+    }
+  }
+
+  .counter-parties {
+
+    .child-accounts {
+      margin-left: 40px;
+    }
+
+    .tree {
+      color: #ff5252;
+    }
+  }
+
+  .horizontal.large-empty-symbols ul.steps-indicator li.done {
+    &:not(.navigable) {
+      div a {
+        color: #ff5252 !important;
+        z-index: 10;
+        padding: 60px 0 10px 0;
+      }
+      &:before{
+        top: 35px !important;
+      }
+      &:after {
+        border-color: #ff5252 !important;
+        color: #ff5252 !important;
+        top: 10px !important;
+      }
+
+    }
+  }
+  .horizontal.large-empty-symbols ul.steps-indicator {
+    padding: 0 !important;
+  }
+  .horizontal.large-empty-symbols ul.steps-indicator li.done {
+    &.navigable {
+      div a {
+        z-index: 10;
+        padding: 60px 0 10px 0;
+      }
+      &:before{
+        top: 35px !important;
+      }
+      &:after {
+        border-color: #231e1e !important;
+        color: #231e1e !important;
+        top: 10px !important;
+      }
+
+    }
+  }
+}
+
+::ng-deep {
+  &.date-pattern {
+    display: flex;
+  }
+
+  &.close-row {
+    padding-top: 20px;
+
+    .btn {
+      display: inline-flex;
+      margin-right: 10px !important;
+    }
+  }
+
+  .dark {
+    ul.steps-indicator li div a:hover {
+      color: white !important;
+    }
+
+    .horizontal.large-empty-symbols ul.steps-indicator li.done {
+      &.navigable {
+        div a {
+          color: white !important;
+        }
+      }
+    }
+  }
+
+  .md-effect-1 {
+    .region {
+      display: flex;
+    }
+
+    .input-group-text {
+      background-color: #9ccc65 !important;
+    }
+  }
+}

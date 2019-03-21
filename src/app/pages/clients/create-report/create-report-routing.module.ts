@@ -7,7 +7,7 @@ const routes: Routes = [
     path: '',
     component: CreateReportComponent,
     data: {
-      title: 'Create Report',
+      title: 'Create Report: Goldman Sachs',
       icon: 'icon-home',
       caption: 'lorem ipsum dolor sit amet, consectetur adipisicing elit',
       status: true
@@ -19,4 +19,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class ClientListRoutingModule { }
+export class CreateReportRoutingModule { }

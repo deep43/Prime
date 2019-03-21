@@ -1,0 +1,174 @@
+<div class="page-body">
+
+  <div class="row">
+    <div class="col-sm-12">
+      <app-card [title]="" [classHeader]="true" class="table-card">
+
+        <div class="row table-row">
+          <div class="col-md-12 col-sm-12 col-lg-12">
+            <ag-grid-angular
+              class="{{appliedThemeClassOnTable}}"
+              [rowData]="rowData"
+              [columnDefs]="columnDefs"
+              [defaultColDef]="defaultColDef"
+              [floatingFilter]="true"
+              [animateRows]="true"
+              [pagination]="true"
+              [paginationPageSize]="20"
+              (gridReady)="onGridReady($event)"
+              (firstDataRendered)="onFirstDataRendered($event)"
+            >
+            </ag-grid-angular>
+
+          </div>
+        </div>
+
+        <div class="row page-change-row">
+          <div class="col-12 col-sm-6">
+            <button class="btn btn-success btn-sm add" (click)="openMyModal($event)">
+              <i class="icofont icofont-contact-add"></i> Add Investor Detail
+            </button>
+            <label class="p-r-10 filter-on-mob p-t-5">Show </label>
+            <select name="select"
+                    (change)="onPageSizeChanged()" id="page-size"
+                    class="rows-per-page"
+                    [(ngModel)]="selectedRowsPerPage">
+              <option value="10">10</option>
+              <option value="15">15</option>
+              <option value="20" selected>20</option>
+              <option value="25">25</option>
+              <option value="30">30</option>
+              <option value="35">35</option>
+              <option value="40">40</option>
+            </select>
+            <label class="p-l-10">entries</label>
+          </div>
+        </div>
+      </app-card>
+    </div>
+  </div>
+</div>
+<!--start of modals-->
+<app-modal-animation [modalID]="'effect-1'" [modalClass]="'md-effect-1 plus-modal chat-modal'">
+  <div class="card">
+    <div class="card-block">
+      <div class="row heading-row">
+        <h5 class="heading">
+          Investor Details
+        </h5>
+      </div>
+      <div class="row">
+        <div class="col-lg-12 m-t-20">
+          <form class="md-float-material form-material login-form" action="javascript:">
+            <div class="form-group form-primary">
+              <input type="text" name="investor" class="form-control" required=""
+                     [(ngModel)]="selectedInvDetail.investor">
+              <span class="form-bar"></span>
+              <label class="float-label text-success">Investor</label>
+            </div>
+            <div class="form-group form-primary">
+              <select name="vendor" class="form-control form-control-inverse"
+                      [(ngModel)]="selectedInvDetail.vendor">
+                <option value="OneAccess">OneAccess</option>
+                <option value="Commcise">Commcise</option>
+                <option value="CorpAxe">CorpAxe</option>
+                <option value="A2">A2</option>
+                <option value="Bloomberg">Bloomberg</option>
+                <option value="MarkIt">MarkIt</option>
+              </select>
+            </div>
+            <div class="form-group form-primary date-pattern">
+              <input class="form-control"
+                     placeholder="yyyy-mm-dd" name="dp"
+                     [(ngModel)]="selectedInvDetail.deadLine"
+                     ngbDatepicker #d="ngbDatepicker">
+              <div class="input-group-append p-l-0">
+                  <span class="input-group-text" (click)="d.toggle()">
+                    <i class="icofont icofont-ui-calendar"></i>
+                  </span>
+              </div>
+              <label class="float-label text-success">Investor Deadline</label>
+
+            </div>
+            <div class="form-group form-primary">
+              <input type="text" name="dataset" class="form-control" required=""
+                     [(ngModel)]="selectedInvDetail.dataSet">
+              <span class="form-bar"></span>
+              <label class="float-label text-success">Data Set</label>
+            </div>
+            <div class="form-group form-primary">
+              <input type="text" name="status" class="form-control" required=""
+                     [(ngModel)]="selectedInvDetail.status">
+              <span class="form-bar"></span>
+              <label class="float-label text-success">Status</label>
+            </div>
+            <div class="form-group form-primary">
+              <input type="number" name="errors" class="form-control" required=""
+                     [(ngModel)]="selectedInvDetail.errors">
+              <span class="form-bar"></span>
+              <label class="float-label text-success">Errors</label>
+            </div>
+            <div class="form-group form-primary">
+              <input type="number" name="review" class="form-control" required=""
+                     [(ngModel)]="selectedInvDetail.review">
+              <span class="form-bar"></span>
+              <label class="float-label text-success">Review</label>
+            </div>
+            <div class="form-group form-primary">
+              <select name="published" class="form-control form-control-inverse"
+                      [(ngModel)]="selectedInvDetail.published">
+                <option value="Published">Published</option>
+                <option value="Unpublished">Unpublished</option>
+              </select>
+            </div>
+
+            <!--<div class="auth-box card">
+              <div class="card-block">
+                <div class="row m-b-20">
+                  <div class="col-md-12">
+                    <h3 class="text-center p-t-30">Prime Reporting</h3>
+                    <h6 class="text-center p-t-10">Sign In to your account</h6>
+                  </div>
+                </div>
+
+                <div class="row m-t-25 text-left">
+                  <div class="col-12">
+                    <div class="checkbox-fade fade-in-success d-">
+                      <label>
+                        <input type="checkbox" value="" class="remember">
+                        <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                        <span class="">Remember me</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="row m-t-30">
+                  <div class="col-md-12">
+                    <button type="button" [routerLink]="['/monitoring/daily']"
+                            class="btn btn-md btn-block btn-success text-center m-b-20 ripple light color-primary">
+                      LOG IN
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>-->
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12 close-row">
+          <button class="btn btn-success btn-sm save" (click)="addInvestorDetail($event)">
+            Save
+          </button>
+          <button class="btn btn-success btn-sm" (click)="closeMyModal($event)">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</app-modal-animation>
+<!--end of modals-->
+<ng2-toasty [position]="position"></ng2-toasty>
+
+

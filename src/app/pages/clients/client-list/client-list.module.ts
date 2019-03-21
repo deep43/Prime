@@ -1,10 +1,9 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ClientListComponent } from './client-list.component';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {ClientListComponent} from './client-list.component';
 import {ClientListRoutingModule} from './client-list-routing.module';
 import {SharedModule} from '../../../shared/shared.module';
 import {ChartModule} from 'angular2-chartjs';
-import {NgxDatatableModule} from '@swimlane/ngx-datatable';
 import {AgGridModule} from 'ag-grid-angular';
 import {FormsModule} from '@angular/forms';
 
@@ -12,12 +11,12 @@ import {FormsModule} from '@angular/forms';
   imports: [
     CommonModule,
     ClientListRoutingModule,
-      SharedModule,
+    SharedModule,
     ChartModule,
     FormsModule,
-    NgxDatatableModule,
     AgGridModule.withComponents([]),
   ],
   declarations: [ClientListComponent]
 })
-export class ClientListModule { }
+export class ClientListModule {
+}

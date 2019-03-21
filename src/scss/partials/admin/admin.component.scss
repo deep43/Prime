@@ -10,3 +10,9 @@
 .prime-logo{
   width: 120px;
 }
+.dark{
+  .pcoded-submenu li.active > a,
+  .pcoded-submenu li:hover > a{
+    color: white !important;
+  }
+}

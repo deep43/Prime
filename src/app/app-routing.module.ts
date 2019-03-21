@@ -1,12 +1,12 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import {AdminComponent} from './layout/admin/admin.component';
-import {AuthComponent} from './layout/auth/auth.component';
+import {MainLayoutComponent} from './layout/main-layout/main-layout.component';
+import {PlainLayoutComponent} from './layout/plain-layout/plain-layout.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: AdminComponent,
+    component: MainLayoutComponent,
     children: [
       {
         path: '',
@@ -21,16 +21,20 @@ const routes: Routes = [
         path: 'monitoring',
         loadChildren: './pages/monitoring/monitoring.module#MonitoringModule'
       },
+      {
+        path: 'aggregator',
+        loadChildren: './pages/aggregator/aggregator.module#AggregatorModule'
+      },
     ]
   },
   {
     path: '',
-    component: AuthComponent,
+    component: PlainLayoutComponent,
     children: [
       {
         path: 'login',
         loadChildren: './pages/login/basic-login.module#BasicLoginModule'
-      },
+      }
     ]
   }
 ];
